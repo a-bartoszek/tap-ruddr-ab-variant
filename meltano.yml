@@ -1,0 +1,32 @@
+version: 1
+send_anonymous_usage_stats: true
+project_id: tap-ruddr
+default_environment: test
+environments:
+- name: test
+plugins:
+  extractors:
+  - name: tap-ruddr
+    namespace: tap_ruddr
+    pip_url: -e .
+    executable: tap-ruddr
+    flattening_enabled: True
+    flattening_max_depth: 1
+    capabilities:
+    - catalog
+    - discover
+    - properties
+    - state
+    settings:
+      - name: auth_token
+        kind: password
+    config:
+      start_date: '2010-01-01T00:00:00Z'
+    select:
+    - clients.*
+    - projects.*
+    - project-members.*
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl

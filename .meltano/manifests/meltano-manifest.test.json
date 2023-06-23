@@ -1,0 +1,153 @@
+{
+    "default_environment": "test",
+    "env": {
+        "MELTANO_CLI_LOG_CONFIG": "logging.yaml",
+        "MELTANO_CLI_LOG_LEVEL": "info",
+        "MELTANO_DATABASE_MAX_RETRIES": "3",
+        "MELTANO_DATABASE_RETRY_TIMEOUT": "5",
+        "MELTANO_DATABASE_URI": "sqlite:///${MELTANO_PROJECT_ROOT}/.meltano/meltano.db",
+        "MELTANO_DEFAULT_ENVIRONMENT": "test",
+        "MELTANO_DISCOVERY_URL": "https://discovery.meltano.com/discovery.yml",
+        "MELTANO_ELT_BUFFER_SIZE": "10485760",
+        "MELTANO_EXPERIMENTAL": "false",
+        "MELTANO_FF_ENABLE_API_SCHEDULED_JOB_LIST": "false",
+        "MELTANO_FF_ENABLE_UVICORN": "false",
+        "MELTANO_FF_PLUGIN_LOCKS_REQUIRED": "false",
+        "MELTANO_FF_STRICT_ENV_VAR_MODE": "false",
+        "MELTANO_HUB_URL": "https://hub.meltano.com",
+        "MELTANO_MAIL_DEBUG": "false",
+        "MELTANO_MAIL_DEFAULT_SENDER": "\"Meltano\" <bot@meltano.com>",
+        "MELTANO_MAIL_PORT": "1025",
+        "MELTANO_MAIL_SENDGRID_UNSUBSCRIBE_GROUP_ID": "12751",
+        "MELTANO_MAIL_SERVER": "localhost",
+        "MELTANO_MAIL_USE_TLS": "false",
+        "MELTANO_OAUTH_SERVICE_PROVIDERS": "all",
+        "MELTANO_PROJECT_ID": "tap-ruddr",
+        "MELTANO_PROJECT_READONLY": "false",
+        "MELTANO_SEND_ANONYMOUS_USAGE_STATS": "true",
+        "MELTANO_SNOWPLOW_COLLECTOR_ENDPOINTS": "[\"https://sp.meltano.com\"]",
+        "MELTANO_STATE_BACKEND_LOCK_RETRY_SECONDS": "1",
+        "MELTANO_STATE_BACKEND_LOCK_TIMEOUT_SECONDS": "10",
+        "MELTANO_STATE_BACKEND_URI": "systemdb",
+        "MELTANO_UI_ANALYSIS": "false",
+        "MELTANO_UI_ANONYMOUS_READONLY": "false",
+        "MELTANO_UI_AUTHENTICATION": "false",
+        "MELTANO_UI_BIND_HOST": "0.0.0.0",
+        "MELTANO_UI_BIND_PORT": "5000",
+        "MELTANO_UI_FORWARDED_ALLOW_IPS": "127.0.0.1",
+        "MELTANO_UI_NOTIFICATION": "false",
+        "MELTANO_UI_PASSWORD_SALT": "b4c124932584ad6e69f2774a0ae5c138",
+        "MELTANO_UI_READONLY": "false",
+        "MELTANO_UI_SECRET_KEY": "thisisnotapropersecretkey",
+        "MELTANO_UI_SESSION_COOKIE_SECURE": "false",
+        "MELTANO_UI_WORKERS": "4"
+    },
+    "plugins": {
+        "extractors": [
+            {
+                "capabilities": [
+                    "state",
+                    "catalog",
+                    "discover",
+                    "about",
+                    "stream-maps",
+                    "state",
+                    "catalog",
+                    "discover",
+                    "about",
+                    "stream-maps"
+                ],
+                "config": {
+                    "start_date": "2010-01-01T00:00:00Z"
+                },
+                "env": {
+                    "MELTANO_EXTRACT_START_DATE": "2010-01-01T00:00:00Z",
+                    "MELTANO_EXTRACT__LOAD_SCHEMA": "tap_ruddr",
+                    "MELTANO_EXTRACT__METADATA": "{}",
+                    "MELTANO_EXTRACT__SCHEMA": "{}",
+                    "MELTANO_EXTRACT__SELECT": "[\"*.*\"]",
+                    "MELTANO_EXTRACT__SELECT_FILTER": "[]",
+                    "TAP_RUDDR_START_DATE": "2010-01-01T00:00:00Z",
+                    "TAP_RUDDR__LOAD_SCHEMA": "tap_ruddr",
+                    "TAP_RUDDR__METADATA": "{}",
+                    "TAP_RUDDR__SCHEMA": "{}",
+                    "TAP_RUDDR__SELECT": "[\"*.*\"]",
+                    "TAP_RUDDR__SELECT_FILTER": "[]"
+                },
+                "label": "tap-ruddr",
+                "name": "tap-ruddr",
+                "namespace": "tap_ruddr",
+                "pip_url": "-e .",
+                "plugin_type": "extractors",
+                "settings": [
+                    {
+                        "name": "username"
+                    },
+                    {
+                        "kind": "password",
+                        "name": "password"
+                    },
+                    {
+                        "name": "start_date",
+                        "value": "2010-01-01T00:00:00Z"
+                    },
+                    {
+                        "name": "username"
+                    },
+                    {
+                        "kind": "password",
+                        "name": "password"
+                    },
+                    {
+                        "name": "start_date",
+                        "value": "2010-01-01T00:00:00Z"
+                    }
+                ]
+            }
+        ],
+        "files": [],
+        "loaders": [
+            {
+                "docs": "https://hub.meltano.com/loaders/jsonl.html",
+                "env": {
+                    "MELTANO_LOAD_DESTINATION_PATH": "output",
+                    "MELTANO_LOAD_DO_TIMESTAMP_FILE": "false",
+                    "MELTANO_LOAD__DIALECT": "target_jsonl",
+                    "TARGET_JSONL_DESTINATION_PATH": "output",
+                    "TARGET_JSONL_DO_TIMESTAMP_FILE": "false",
+                    "TARGET_JSONL__DIALECT": "target_jsonl"
+                },
+                "label": "JSON Lines (JSONL)",
+                "name": "target-jsonl",
+                "namespace": "target_jsonl",
+                "pip_url": "target-jsonl",
+                "plugin_type": "loaders",
+                "repo": "https://github.com/andyh1203/target-jsonl",
+                "settings": [
+                    {
+                        "description": "Sets the destination path the JSONL files are written to, relative to the project root. The directory needs to exist already, it will not be created automatically. To write JSONL files to the project root, set an empty string (`\"\"`).",
+                        "name": "destination_path",
+                        "value": "output"
+                    },
+                    {
+                        "description": "Specifies if the files should get timestamped",
+                        "kind": "boolean",
+                        "label": "Include timestamp in file names",
+                        "name": "do_timestamp_file",
+                        "value": false
+                    }
+                ],
+                "variant": "andyh1203"
+            }
+        ],
+        "mappers": [],
+        "orchestrators": [],
+        "transformers": [],
+        "transforms": [],
+        "utilities": []
+    },
+    "project_id": "tap-ruddr",
+    "schedules": [],
+    "send_anonymous_usage_stats": true,
+    "version": 1
+}
