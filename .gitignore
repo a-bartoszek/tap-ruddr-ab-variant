@@ -1,4 +1,4 @@
-.meltano/logs/*
+.meltano/*
 tap_ruddr/__pycache__/*
 **/*.lock
 **/*.pyc
