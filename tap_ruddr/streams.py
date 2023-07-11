@@ -128,7 +128,18 @@ class ProjectsStream(ruddrStream):
                 th.Property("nonBillableHours", th.NumberType)
             )
         ),
-        th.Property("monthlyBudget", th.NumberType)
+        th.Property(
+            "monthlyBudget",
+            th.ObjectType(
+                th.Property("revenue", th.NumberType),
+                th.Property("servicesRevenue", th.NumberType),
+                th.Property("otherRevenue", th.NumberType),
+                th.Property("billableExpenses", th.NumberType),
+                th.Property("nonBillableExpenses", th.NumberType),
+                th.Property("billableHours", th.NumberType),
+                th.Property("nonBillableHours", th.NumberType)
+            )
+        )
     ).to_dict()
 
 class ProjectMembersStream(ruddrStream):

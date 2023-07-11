@@ -19,4 +19,4 @@ class ruddrPaginator(BaseAPIPaginator):
             return
 
         # leverage JSONPathPaginator to lookup the id of the last result
-        return JSONPathPaginator("$[-1:].id").get_next(response)
+        return JSONPathPaginator("$.results[-1:].id").get_next(response)
