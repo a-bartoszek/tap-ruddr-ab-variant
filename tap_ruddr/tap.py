@@ -29,6 +29,11 @@ class Tapruddr(Tap):
             default="https://www.ruddr.io/api/workspace",
             description="The url for the API service",
         ),
+        th.Property(
+            "start_date",
+            th.DateTimeType,
+            description="The logical run date. Used to filter results.",
+        ),
     ).to_dict()
 
     def discover_streams(self) -> list[streams.ruddrStream]:
@@ -41,6 +46,11 @@ class Tapruddr(Tap):
             streams.ClientsStream(self),
             streams.ProjectsStream(self),
             streams.ProjectMembersStream(self),
+            streams.ProjectRolesStream(self),
+            streams.ProjectTasksStream(self),
+            streams.ProjectExpensesStream(self),
+            streams.ProjectOtherItemsStream(self),
+            streams.TimeEntriesStream(self),
         ]
 
 

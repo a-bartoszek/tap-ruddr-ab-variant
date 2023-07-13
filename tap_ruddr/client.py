@@ -77,9 +77,7 @@ class ruddrStream(RESTStream):
         params: dict = {}
         if next_page_token:
             params["startingAfter"] = next_page_token
-        if self.replication_key:
-            params["sort"] = "asc"
-            params["order_by"] = self.replication_key
+        params["dateOnAfter"] = self.config.get("start_date")
         return params
 
 
