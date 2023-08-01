@@ -33,6 +33,7 @@ plugins:
     - project-expenses.*
     - project-other-items.*
     - time-entries.*
+    - allocations.*
   loaders:
   - name: target-jsonl
     variant: andyh1203

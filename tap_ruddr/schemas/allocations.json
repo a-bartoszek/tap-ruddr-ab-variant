@@ -1,0 +1,122 @@
+{
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": ["string", "null"]
+      },
+      "resourceTypeId": {
+        "type": ["string", "null"]
+      },
+      "assignmentTypeId": {
+        "type": ["string", "null"]
+      },
+      "start": {
+        "type": ["string", "null"],
+        "format": "date"
+      },
+      "end": {
+        "type": ["string", "null"],
+        "format": "date"
+      },
+      "unit": {
+        "type": ["string", "null"]
+      },
+      "hoursPerDay": {
+        "type": ["number", "null"]
+      },
+      "hoursPerWeek": {
+        "type": ["number", "null"]
+      },
+      "totalHours": {
+        "type": ["number", "null"]
+      },
+      "isBillable": {
+        "type": ["boolean", "null"]
+      },
+      "notes": {
+        "type": ["string", "null"]
+      },
+      "createdAt": {
+        "type": ["string", "null"],
+        "format": "date-time"
+      },
+      "member": {
+        "type": ["object", "null"],
+        "properties": {
+          "id": {
+            "type": ["string", "null"]
+          },
+          "name": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "placeholder": {
+        "type": ["object", "null"],
+        "properties": {
+          "id": {
+            "type": ["string", "null"]
+          },
+          "name": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "project": {
+        "type": ["object", "null"],
+        "properties": {
+          "id": {
+            "type": ["string", "null"]
+          },
+          "name": {
+            "type": ["string", "null"]
+          },
+          "client": {
+            "type": ["object", "null"],
+            "properties": {
+              "id": {
+                "type": ["string", "null"]
+              },
+              "name": {
+                "type": ["string", "null"]
+              }
+            }
+          }
+        }
+      },
+      "role": {
+        "type": ["object", "null"],
+        "properties": {
+          "id": {
+            "type": ["string", "null"]
+          },
+          "name": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "task": {
+        "type": ["object", "null"],
+        "properties": {
+          "id": {
+            "type": ["string", "null"]
+          },
+          "name": {
+            "type": ["string", "null"]
+          }
+        }
+      },
+      "timeOffType": {
+        "type": ["object", "null"],
+        "properties": {
+          "id": {
+            "type": ["string", "null"]
+          },
+          "name": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "required": ["id", "resourceTypeId", "assignmentTypeId", "start", "end", "unit", "hoursPerDay", "hoursPerWeek", "totalHours", "isBillable", "notes", "createdAt", "member", "placeholder", "project", "role", "task", "timeOffType"]
+  }
