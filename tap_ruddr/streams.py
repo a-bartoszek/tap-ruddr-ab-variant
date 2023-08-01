@@ -78,3 +78,11 @@ class TimeEntriesStream(ruddrStream):
     replication_key = None
     records_jsonpath = '$.results[*]'
     schema_filepath = SCHEMAS_DIR / "time-entries.json"
+
+class AllocationsStream(ruddrStream):
+    name = "allocations"
+    path = "/allocations"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "allocations.json"

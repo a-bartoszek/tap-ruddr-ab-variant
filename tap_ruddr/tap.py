@@ -51,6 +51,7 @@ class Tapruddr(Tap):
             streams.ProjectExpensesStream(self),
             streams.ProjectOtherItemsStream(self),
             streams.TimeEntriesStream(self),
+            streams.AllocationsStream(self),
         ]
 
 
