@@ -48,8 +48,3 @@ plugins:
   - name: target-parquet
     variant: estrategiahq
     pip_url: git+https://github.com/estrategiahq/target-parquet.git
-  utilities:
-  - name: superset
-    variant: meltano
-    pip_url: apache-superset==2.0.0 flask==2.0.3 werkzeug==2.0.3 jinja2==3.0.1 wtforms==2.3.3
-      git+https://github.com/meltano/superset-ext.git@main cryptography==3.4.7
