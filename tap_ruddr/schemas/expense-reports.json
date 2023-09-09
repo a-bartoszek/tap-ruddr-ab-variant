@@ -1,0 +1,38 @@
+{
+  "type": ["object", "null"],
+  "properties": {
+    "id": {
+      "type": ["string", "null"],
+      "format": "uuid"
+    },
+    "number": {
+      "type": ["integer", "null"]
+    },
+    "title": {
+      "type": ["string", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "createdAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "member": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "name": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}

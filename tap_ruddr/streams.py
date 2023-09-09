@@ -86,3 +86,75 @@ class AllocationsStream(ruddrStream):
     replication_key = None
     records_jsonpath = '$.results[*]'
     schema_filepath = SCHEMAS_DIR / "allocations.json"
+
+class MembersStream(ruddrStream):
+    name = "members"
+    path = "/members"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "members.json"
+    
+class ProjectRevenueRecognitionEntriesStream(ruddrStream):
+    name = "project-revenue-recognition-entries"
+    path = "/project-revenue-recognition-entries"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "project-revenue-recognition-entries.json"
+    
+class ProjectBudgetExpensesStream(ruddrStream):
+    name = "project-budget-expenses"
+    path = "/project-budget-expenses"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "project-budget-expenses.json"
+    
+class ProjectBudgetOtherItemsStream(ruddrStream):
+    name = "project-budget-other-items"
+    path = "/project-budget-other-items"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "project-budget-other-items.json"
+    
+class ProjectInvoiceMilestonesStream(ruddrStream):
+    name = "project-invoice-milestones"
+    path = "/project-invoice-milestones"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "project-invoice-milestones.json"
+    
+class ProjectMonthlyBudgetExpensesStream(ruddrStream):
+    name = "project-monthly-budget-expenses"
+    path = "/project-monthly-budget-expenses"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "project-monthly-budget-expenses.json"
+    
+class ProjectMonthlyBudgetOtherItemsStream(ruddrStream):
+    name = "project-monthly-budget-other-items"
+    path = "/project-monthly-budget-other-items"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "project-monthly-budget-other-items.json"
+    
+class ExpenseItemsStream(ruddrStream):
+    name = "expense-items"
+    path = "/expense-items"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "expense-items.json"
+    
+class ExpenseReportsStream(ruddrStream):
+    name = "expense-reports"
+    path = "/expense-reports"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = '$.results[*]'
+    schema_filepath = SCHEMAS_DIR / "expense-reports.json"

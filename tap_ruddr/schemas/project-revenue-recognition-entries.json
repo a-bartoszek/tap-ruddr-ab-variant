@@ -1,0 +1,47 @@
+{
+  "type": ["object", "null"],
+  "properties": {
+    "id": {
+      "type": ["string", "null"],
+      "format": "uuid"
+    },
+    "date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "amount": {
+      "type": ["number", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "createdAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "project": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "name": {
+          "type": ["string", "null"]
+        },
+        "client": {
+          "type": ["object", "null"],
+          "properties": {
+            "id": {
+              "type": ["string", "null"],
+              "format": "uuid"
+            },
+            "name": {
+              "type": ["string", "null"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

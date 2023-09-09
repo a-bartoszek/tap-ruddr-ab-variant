@@ -21,11 +21,12 @@ plugins:
     - name: start_date
       value: '2023-01-01'
     config:
-      start_date: '2023-01-01'
+      start_date: '2022-01-01'
     flattening_enabled: true
     flattening_max_depth: 0
     select:
     - clients.*
+    - members.*
     - projects.*
     - project-members.*
     - project-roles.*
@@ -34,6 +35,14 @@ plugins:
     - project-other-items.*
     - time-entries.*
     - allocations.*
+    - expense-items.*
+    - expense-reports.*
+    - project-budget-expenses.*
+    - project-budget-other-items.*
+    - project-invoice-milestones.*
+    - project-monthly-budget-expenses.*
+    - project-monthly-budget-other-items.*
+    - project-revenue-recognition-entries.*
   loaders:
   - name: target-jsonl
     variant: andyh1203

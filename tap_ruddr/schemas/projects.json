@@ -1,180 +1,192 @@
 {
-    "properties": {
-      "billingTypeId": {
-        "type": ["string", "null"]
-      },
-      "budget": {
-        "type": ["object", "null"],
-        "properties": {
-          "billableExpenses": {
-            "type": ["number", "null"]
-          },
-          "billableHours": {
-            "type": ["number", "null"]
-          },
-          "nonBillableExpenses": {
-            "type": ["number", "null"]
-          },
-          "nonBillableHours": {
-            "type": ["number", "null"]
-          },
-          "otherRevenue": {
-            "type": ["number", "null"]
-          },
-          "revenue": {
-            "type": ["number", "null"]
-          },
-          "servicesRevenue": {
-            "type": ["number", "null"]
-          }
+  "type": ["object", "null"],
+  "properties": {
+    "id": {
+      "type": ["string", "null"],
+      "format": "uuid"
+    },
+    "key": {
+      "type": ["string", "null"]
+    },
+    "name": {
+      "type": ["string", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "statusId": {
+      "type": ["string", "null"]
+    },
+    "start": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "end": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "code": {
+      "type": ["string", "null"]
+    },
+    "poNumber": {
+      "type": ["string", "null"]
+    },
+    "billingTypeId": {
+      "type": ["string", "null"]
+    },
+    "isBillable": {
+      "type": ["boolean", "null"]
+    },
+    "currency": {
+      "type": ["string", "null"]
+    },
+    "revenueRecognitionMethod": {
+      "type": ["string", "null"]
+    },
+    "fixedFee": {
+      "type": ["number", "null"]
+    },
+    "fixedRecurringFee": {
+      "type": ["number", "null"]
+    },
+    "fixedRecurringStart": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "fixedRecurringEnd": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "useRoles": {
+      "type": ["boolean", "null"]
+    },
+    "useBudget": {
+      "type": ["boolean", "null"]
+    },
+    "budgetMode": {
+      "type": ["string", "null"]
+    },
+    "useMonthlyBudget": {
+      "type": ["boolean", "null"]
+    },
+    "monthlyBudgetMode": {
+      "type": ["string", "null"]
+    },
+    "requiresNotes": {
+      "type": ["boolean", "null"]
+    },
+    "requiresTasks": {
+      "type": ["boolean", "null"]
+    },
+    "recordStatusId": {
+      "type": ["string", "null"]
+    },
+    "createdAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "client": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "name": {
+          "type": ["string", "null"]
         }
-      },
-      "budgetMode": {
-        "type": ["string", "null"]
-      },
-      "client": {
-        "type": ["object", "null"],
-        "properties": {
-          "id": {
-            "type": ["string", "null"]
-          },
-          "name": {
-            "type": ["string", "null"]
-          }
-        }
-      },
-      "code": {
-        "type": ["string", "null"]
-      },
-      "createdAt": {
-        "type": ["string", "null"],
-        "format": "date-time"
-      },
-      "currency": {
-        "type": ["string", "null"]
-      },
-      "end": {
-        "type": ["string", "null"],
-        "format": "date"
-      },
-      "fixedFee": {
-        "type": ["number", "null"]
-      },
-      "fixedRecurringEnd": {
-        "type": ["string", "null"]
-      },
-      "fixedRecurringFee": {
-        "type": ["number", "null"]
-      },
-      "fixedRecurringStart": {
-        "type": ["string", "null"]
-      },
-      "id": {
-        "type": ["string", "null"]
-      },
-      "isBillable": {
-        "type": ["boolean", "null"]
-      },
-      "key": {
-        "type": ["string", "null"]
-      },
-      "monthlyBudget": {
-        "type": ["object", "null"],
-        "properties": {
-          "billableExpenses": {
-            "type": ["number", "null"]
-          },
-          "billableHours": {
-            "type": ["number", "null"]
-          },
-          "nonBillableExpenses": {
-            "type": ["number", "null"]
-          },
-          "nonBillableHours": {
-            "type": ["number", "null"]
-          },
-          "otherRevenue": {
-            "type": ["number", "null"]
-          },
-          "revenue": {
-            "type": ["number", "null"]
-          },
-          "servicesRevenue": {
-            "type": ["number", "null"]
-          }
-        }
-      },
-      "monthlyBudgetMode": {
-        "type": ["string", "null"]
-      },
-      "name": {
-        "type": ["string", "null"]
-      },
-      "notes": {
-        "type": ["string", "null"]
-      },
-      "poNumber": {
-        "type": ["string", "null"]
-      },
-      "practice": {
-        "type": ["object", "null"],
-        "properties": {
-          "id": {
-            "type": ["string", "null"]
-          },
-          "name": {
-            "type": ["string", "null"]
-          }
-        }
-      },
-      "projectType": {
-        "type": ["object", "null"],
-        "properties": {
-          "id": {
-            "type": ["string", "null"]
-          },
-          "name": {
-            "type": ["string", "null"]
-          }
-        }
-      },
-      "recordStatusId": {
-        "type": ["string", "null"]
-      },
-      "revenueRecognitionMethod": {
-        "type": ["string", "null"]
-      },
-      "start": {
-        "type": ["string", "null"],
-        "format": "date"
-      },
-      "statusId": {
-        "type": ["string", "null"]
-      },
-      "tags": {
-        "type": ["array", "null"],
-        "items": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": ["string", "null"]
-            },
-            "name": {
-              "type": ["string", "null"]
-            }
-          }
-        }
-      },
-      "useBudget": {
-        "type": ["boolean", "null"]
-      },
-      "useMonthlyBudget": {
-        "type": ["boolean", "null"]
-      },
-      "useRoles": {
-        "type": ["boolean", "null"]
       }
     },
-    "type": "object"
+    "practice": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "name": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "projectType": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "name": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "tags": {
+      "type": ["array", "null"],
+      "items": {
+        "type": ["object", "null"],
+        "properties": {
+          "id": {
+            "type": ["string", "null"],
+            "format": "uuid"
+          },
+          "name": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "budget": {
+      "type": ["object", "null"],
+      "properties": {
+        "revenue": {
+          "type": ["number", "null"]
+        },
+        "servicesRevenue": {
+          "type": ["number", "null"]
+        },
+        "otherRevenue": {
+          "type": ["number", "null"]
+        },
+        "billableExpenses": {
+          "type": ["number", "null"]
+        },
+        "nonBillableExpenses": {
+          "type": ["number", "null"]
+        },
+        "billableHours": {
+          "type": ["number", "null"]
+        },
+        "nonBillableHours": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "monthlyBudget": {
+      "type": ["object", "null"],
+      "properties": {
+        "revenue": {
+          "type": ["number", "null"]
+        },
+        "servicesRevenue": {
+          "type": ["number", "null"]
+        },
+        "otherRevenue": {
+          "type": ["number", "null"]
+        },
+        "billableExpenses": {
+          "type": ["number", "null"]
+        },
+        "nonBillableExpenses": {
+          "type": ["number", "null"]
+        },
+        "billableHours": {
+          "type": ["number", "null"]
+        },
+        "nonBillableHours": {
+          "type": ["number", "null"]
+        }
+      }
+    }
   }
-  
+}

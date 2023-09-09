@@ -5,16 +5,10 @@
       "type": ["string", "null"],
       "format": "uuid"
     },
-    "name": {
-      "type": ["string", "null"]
+    "billableAmount": {
+      "type": ["number", "null"]
     },
-    "isActive": {
-      "type": ["boolean", "null"]
-    },
-    "isBillable": {
-      "type": ["boolean", "null"]
-    },
-    "rate": {
+    "nonBillableAmount": {
       "type": ["number", "null"]
     },
     "createdAt": {
@@ -45,7 +39,7 @@
         }
       }
     },
-    "discipline": {
+    "expenseCategory": {
       "type": ["object", "null"],
       "properties": {
         "id": {
@@ -54,28 +48,6 @@
         },
         "name": {
           "type": ["string", "null"]
-        }
-      }
-    },
-    "budget": {
-      "type": ["object", "null"],
-      "properties": {
-        "billableHours": {
-          "type": ["number", "null"]
-        },
-        "nonBillableHours": {
-          "type": ["number", "null"]
-        }
-      }
-    },
-    "monthlyBudget": {
-      "type": ["object", "null"],
-      "properties": {
-        "billableHours": {
-          "type": ["number", "null"]
-        },
-        "nonBillableHours": {
-          "type": ["number", "null"]
         }
       }
     }

@@ -1,25 +1,71 @@
 {
-  "type": ["object", "null"],
+  "type": "object",
   "properties": {
     "id": {
       "type": ["string", "null"],
       "format": "uuid"
     },
-    "typeId": {
+    "statusId": {
       "type": ["string", "null"]
     },
-    "isActive": {
+    "vendor": {
+      "type": ["string", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "amount": {
+      "type": ["number", "null"]
+    },
+    "unitCount": {
+      "type": ["integer", "null"]
+    },
+    "unitAmount": {
+      "type": ["number", "null"]
+    },
+    "isReimbursable": {
       "type": ["boolean", "null"]
     },
     "isBillable": {
       "type": ["boolean", "null"]
     },
-    "rate": {
-      "type": ["number", "null"]
+    "invoiced": {
+      "type": ["boolean", "null"]
     },
     "createdAt": {
       "type": ["string", "null"],
       "format": "date-time"
+    },
+    "expenseReport": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "title": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "expenseCategory": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": ["string", "null"],
+          "format": "uuid"
+        },
+        "name": {
+          "type": ["string", "null"]
+        },
+        "unitName": {
+          "type": ["string", "null"]
+        }
+      }
     },
     "member": {
       "type": ["object", "null"],
@@ -54,43 +100,6 @@
               "type": ["string", "null"]
             }
           }
-        }
-      }
-    },
-    "roles": {
-      "type": ["array", "null"],
-      "items": {
-        "type": ["object", "null"],
-        "properties": {
-          "id": {
-            "type": ["string", "null"],
-            "format": "uuid"
-          },
-          "name": {
-            "type": ["string", "null"]
-          }
-        }
-      }
-    },
-    "budget": {
-      "type": ["object", "null"],
-      "properties": {
-        "billableHours": {
-          "type": ["number", "null"]
-        },
-        "nonBillableHours": {
-          "type": ["number", "null"]
-        }
-      }
-    },
-    "monthlyBudget": {
-      "type": ["object", "null"],
-      "properties": {
-        "billableHours": {
-          "type": ["number", "null"]
-        },
-        "nonBillableHours": {
-          "type": ["number", "null"]
         }
       }
     }
