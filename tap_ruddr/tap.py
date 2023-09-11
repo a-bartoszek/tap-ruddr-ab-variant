@@ -5,6 +5,8 @@ from __future__ import annotations
 from singer_sdk import Tap
 from singer_sdk import typing as th  # JSON schema typing helpers
 
+import os
+
 # TODO: Import your custom stream types here:
 from tap_ruddr import streams
 
@@ -42,27 +44,12 @@ class Tapruddr(Tap):
         Returns:
             A list of discovered streams.
         """
-        return [
-            streams.ClientsStream(self),
-            streams.ProjectsStream(self),
-            streams.ProjectMembersStream(self),
-            streams.ProjectRolesStream(self),
-            streams.ProjectTasksStream(self),
-            streams.ProjectExpensesStream(self),
-            streams.ProjectOtherItemsStream(self),
-            streams.TimeEntriesStream(self),
-            streams.AllocationsStream(self),
-            streams.MembersStream(self),
-            streams.ProjectRevenueRecognitionEntriesStream(self),
-            streams.ProjectBudgetExpensesStream(self),
-            streams.ProjectBudgetOtherItemsStream(self),
-            streams.ProjectInvoiceMilestonesStream(self),
-            streams.ProjectMonthlyBudgetExpensesStream(self),
-            streams.ProjectMonthlyBudgetOtherItemsStream(self),
-            streams.ExpenseItemsStream(self),
-            streams.ExpenseReportsStream(self),
-        ]
+        stream_name_from_env = os.environ.get('STREAM_SINGLE')
+        selected_stream_class = getattr(streams, stream_name_from_env)
+        streams_to_run = [selected_stream_class(self)]
+        # streams_to_run.append("streams.ProjectsStream(self)")
 
+        return streams_to_run
 
 if __name__ == "__main__":
     Tapruddr.cli()

@@ -7,3 +7,5 @@ tap_ruddr/__pycache__/*
 .meltano/meltano.db
 .meltano/meltano.db-shm
 .meltano/meltano.db-wal
+tapconfig.json
+targetconfig.json
